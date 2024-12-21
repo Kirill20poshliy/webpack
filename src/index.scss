@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.background {
+    min-height: 100vh;
+    background-size: cover;
+    
+    .content {
+        min-height: 100vh;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        backdrop-filter: blur(7px);
+
+        h1 {
+            color: #EE7235;
+            font-size: 3rem;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+
+            .btn {
+                position: relative;
+                color: #FFFFFF;
+                width: 16rem;
+                height: 16rem;
+                border: 2px solid #EDEDED;
+                border-radius: 1.5rem;
+                background-size: cover;
+                cursor: pointer;
+                overflow: hidden;
+                
+                img {
+                    width: 4rem;
+                    height: 4rem;
+                }
+                
+                &:hover {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background-color: rgba($color: #FFFFFF, $alpha: 0.3);
+                        width: 100%;
+                        height: 100%;
+                        z-index: 2;
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: -50%;
+                        left: -40%;
+                        background-color: #FFFFFF;
+                        width: 3.5rem;
+                        transform: rotate(20deg);
+                        opacity: .5;
+                        height: 200%;
+                        z-index: 3;
+                        animation-name: glare;
+                        animation-duration: .4s;
+                        animation-timing-function: ease-in;
+                    }
+                }
+
+                &:active {
+                    transform: scale(.98);
+                }
+            }
+        }
+
+    }
+}
+
+@keyframes glare {
+    0% {
+        left: -40%;
+    };
+    100% {
+        left: 140%;
+    }
+}
