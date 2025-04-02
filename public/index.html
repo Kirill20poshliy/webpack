@@ -7,6 +7,23 @@
     <title>Weather</title>
 </head>
 <body>
-    <div id="root"></div>
+    <main id="background" class="background">
+        <div class="content">
+            <h1>Weather sounds</h1>
+            <div class="buttons">
+                <button id="summer" class="btn">
+                    <img alt="indicator">
+                </button>
+                <button id="rainy" class="btn">
+                    <img alt="indicator">
+                </button>
+                <button id="winter" class="btn">
+                    <img alt="indicator">
+                </button>
+            </div>
+            <audio id="audio"></audio>
+            <input id="volume" type="range" min="0" max="1" step="0.01"/>
+        </div>
+    </main>
 </body>
 </html>
